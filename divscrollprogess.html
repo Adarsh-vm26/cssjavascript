@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Scroll Progress Bar</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        display: flex;
+        height: 100vh; /* Full viewport height */
+    }
+    
+    .progress {
+        width: 4px; /* Width of the progress bar */
+        height:60%; /* Full height of the container */
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #ccc;
+        z-index: 1000; /* Ensure it's above other content */
+        transition: height 0.3s ease; /* Smooth transition for height change */
+    }
+    
+    .content {
+        flex: 1; /* Take remaining width */
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: scroll; /* Enable vertical scrolling */
+        height: 100%; /* Full height of the container */
+    }
+    
+    h1 {
+        color: #333;
+    }
+    </style>
+    <div class="container">
+        <div class="progress" id="progress"></div>
+        <div class="content" id="content">
+            <!-- Content with lots of text to enable scrolling -->
+            <h1>Lorem Ipsum</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pharetra nisl. 
+                Integer tempus euismod enim, nec efficitur purus congue vel. Duis sodales odio ac libero 
+                venenatis eleifend. Ut nec faucibus ipsum, vel dapibus leo. Fusce ullamcorper magna sit amet 
+                justo commodo, eget scelerisque lacus sodales. Morbi nec tincidunt nisi, ac varius lorem. 
+                Quisque feugiat, turpis at tempus suscipit, justo arcu luctus justo, a dapibus purus arcu nec ipsum. 
+                Cras ut enim bibendum, congue lectus id, volutpat mauris. Sed nec lorem quis lacus tristique luctus. 
+                Nunc eget ex et lacus viverra maximus sit amet et dui.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pharetra nisl. 
+                Integer tempus euismod enim, nec efficitur purus congue vel. Duis sodales odio ac libero 
+                venenatis eleifend. Ut nec faucibus ipsum, vel dapibus leo. Fusce ullamcorper magna sit amet 
+                justo commodo, eget scelerisque lacus sodales. Morbi nec tincidunt nisi, ac varius lorem. 
+                Quisque feugiat, turpis at tempus suscipit, justo arcu luctus justo, a dapibus purus arcu nec ipsum. 
+                Cras ut enim bibendum, congue lectus id, volutpat mauris. Sed nec lorem quis lacus tristique luctus. 
+                Nunc eget ex et lacus viverra maximus sit amet et dui.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pharetra nisl. 
+                Integer tempus euismod enim, nec efficitur purus congue vel. Duis sodales odio ac libero 
+                venenatis eleifend. Ut nec faucibus ipsum, vel dapibus leo. Fusce ullamcorper magna sit amet 
+                justo commodo, eget scelerisque lacus sodales. Morbi nec tincidunt nisi, ac varius lorem. 
+                Quisque feugiat, turpis at tempus suscipit, justo arcu luctus justo, a dapibus purus arcu nec ipsum. 
+                Cras ut enim bibendum, congue lectus id, volutpat mauris. Sed nec lorem quis lacus tristique luctus. 
+                Nunc eget ex et lacus viverra maximus sit amet et dui.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pharetra nisl. 
+                Integer tempus euismod enim, nec efficitur purus congue vel. Duis sodales odio ac libero 
+                venenatis eleifend. Ut nec faucibus ipsum, vel dapibus leo. Fusce ullamcorper magna sit amet 
+                justo commodo, eget scelerisque lacus sodales. Morbi nec tincidunt nisi, ac varius lorem. 
+                Quisque feugiat, turpis at tempus suscipit, justo arcu luctus justo, a dapibus purus arcu nec ipsum. 
+                Cras ut enim bibendum, congue lectus id, volutpat mauris. Sed nec lorem quis lacus tristique luctus. 
+                Nunc eget ex et lacus viverra maximus sit amet et dui.
+            </p>
+            <!-- Repeat lorem ipsum text to extend the content -->
+            ...
+        </div>
+    </div>
+    <script>const content = document.getElementById('content');
+        const progressBar = document.getElementById('progress');
+        
+        // Function to update the progress bar based on scroll position
+        function updateProgressBar() {
+            const scrollTop = content.scrollTop;
+            const scrollHeight = content.scrollHeight;
+            const clientHeight = content.clientHeight;
+        
+            const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            progressBar.style.height = scrolled + '%';
+        }
+        
+        // Event listener for scroll event on content area
+        content.addEventListener('scroll', updateProgressBar);
+        </script>
+</body>
+</html>

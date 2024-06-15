@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrolling and Sidebar Color Change</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        Sidebar Content
+    </div>
+    <div class="content">
+        <!-- Content with lots of text to enable scrolling -->
+        <h1>Lorem Ipsum</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pharetra nisl. 
+            Integer tempus euismod enim, nec efficitur purus congue vel. Duis sodales odio ac libero 
+            venenatis eleifend. Ut nec faucibus ipsum, vel dapibus leo. Fusce ullamcorper magna sit amet 
+            justo commodo, eget scelerisque lacus sodales. Morbi nec tincidunt nisi, ac varius lorem. 
+            Quisque feugiat, turpis at tempus suscipit, justo arcu luctus justo, a dapibus purus arcu nec ipsum. 
+            Cras ut enim bibendum, congue lectus id, volutpat mauris. Sed nec lorem quis lacus tristique luctus. 
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime quis natus porro placeat, mollitia fuga, harum, quisquam praesentium distinctio molestiae labore facilis alias corporis odio aliquam eligendi provident. Incidunt magnam consequatur, omnis qui exercitationem a, sunt doloribus officiis iure voluptatum et tenetur nihil doloremque quasi ullam, aut consequuntur placeat molestias sequi illo sapiente totam maiores! Nam assumenda quisquam quos error, id iste placeat commodi porro. Doloremque earum optio debitis tempora odit architecto maiores distinctio cupiditate maxime necessitatibus, illum aliquam fugiat unde quos. Cum illum consectetur corporis a voluptatum et error repellat blanditiis ex magni laborum, mollitia similique adipisci repudiandae in deleniti dicta vero eius ratione accusamus. Debitis, quae dolorum fuga quod voluptates exercitationem. Mollitia ipsa, laudantium minima unde odit autem iste, velit reprehenderit ipsum rem sequi! Similique quidem alias consequuntur delectus modi iste rerum, quas nemo corrupti nesciunt, laborum aspernatur optio temporibus cupiditate quia quasi doloremque omnis architecto deserunt vitae? Provident expedita quas nesciunt obcaecati dolor culpa quis non. Doloribus vitae quam soluta officia numquam incidunt doloremque error provident sed hic. Nostrum repudiandae, ut reprehenderit aut totam rerum enim eveniet sequi voluptatibus? Distinctio fuga deserunt repellat molestiae velit incidunt veniam officia ipsum earum ex vitae, tempora omnis illo iste corrupti debitis aperiam consequatur nulla mollitia illum adipisci possimus voluptas fugit. Sunt ratione, ducimus, eaque iste magni laborum repellendus, sapiente harum asperiores voluptatem facere culpa? Recusandae, eius sint unde saepe adipisci doloribus sed eveniet.
+            Nunc eget ex et lacus viverra maximus sit amet et dui.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae impedit labore, enim nam nihil maiores aperiam quos cumque libero, sint est vitae! Totam maxime tempore voluptatum sint, adipisci sequi distinctio, molestias temporibus fugiat consectetur amet magni cum voluptatibus atque, soluta repellendus. Omnis, veritatis numquam. Ratione iusto numquam maxime! Placeat earum architecto sed quo culpa alias voluptas sit in. Mollitia illum numquam repellat fuga sit culpa quam nihil accusamus asperiores cumque blanditiis cum enim magnam incidunt, earum quia? Maxime, id. Similique, unde tenetur? Corporis laudantium consequatur atque molestias magni possimus voluptate nihil quas veritatis soluta aliquid qui, tempore odio voluptatem numquam, ea vero voluptas vitae alias nisi itaque. Enim molestias maiores omnis officia culpa quidem, alias laborum quia atque dolor architecto expedita nam, dicta sunt eum ullam ut nemo ad dolore obcaecati neque, repellendus quasi ipsa. Animi quo esse vitae consequatur voluptatem sit maxime atque totam! Ea officiis quia sint eos accusantium error hic adipisci dolorum rem reprehenderit, earum blanditiis molestiae itaque nemo atque aspernatur quis odit, fugiat, iure omnis? Necessitatibus perspiciatis at iste blanditiis voluptas, explicabo velit molestias et in illo voluptates. Hic quaerat et sit, impedit natus ex minima doloremque quasi voluptates earum harum nihil, minus aperiam a quos delectus voluptate reiciendis praesentium recusandae iusto temporibus fuga eum. Natus blanditiis cupiditate cum reiciendis delectus temporibus suscipit corporis ab! Itaque rerum quae dignissimos asperiores, iste deserunt, libero, officia culpa at saepe commodi nostrum nisi fuga architecto soluta labore reiciendis veniam tenetur ad. Quod tempora iste vero consequatur dolor optio id aut atque! Nam reprehenderit ut numquam ea, deleniti dignissimos suscipit molestias fuga temporibus ipsa quasi sed doloremque in harum quisquam? Voluptatum soluta provident laboriosam repudiandae eos maiores laudantium ea, numquam ex voluptate non doloremque dolorum sapiente, pariatur cum nulla dicta deserunt, accusantium expedita adipisci. Consequuntur modi consectetur neque aliquam libero porro repellendus repudiandae quis, est soluta exercitationem perspiciatis iusto omnis quo recusandae harum quisquam quod culpa necessitatibus ullam delectus illum. Voluptatem praesentium fuga esse? Sapiente iure rem non. Quaerat a odio in, reprehenderit veritatis qui? Ea, praesentium! Consequatur ratione mollitia omnis inventore sapiente autem illum magnam aspernatur sit eius nisi provident reprehenderit consectetur, quaerat, nihil doloribus veniam aliquam vero magni dignissimos. Impedit animi, necessitatibus iste sint, consequatur ratione velit quis, deleniti odit aliquam commodi officia optio delectus! Tempore odit dicta quaerat tenetur velit dolorum, laudantium expedita quas illo cum, earum nesciunt porro iusto culpa, atque aspernatur amet error facilis pariatur.
+        </p>
+        <!-- Repeat lorem ipsum text to extend the content -->
+        ...
+    </div>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+const content = document.querySelector('.content');
+
+// Function to change sidebar color based on scroll position
+function changeSidebarColor() {
+    const scrollPosition = content.scrollTop;
+
+    // Example: Change sidebar color when scrolling down
+    if (scrollPosition > 200) {
+        sidebar.style.backgroundColor = '#555';
+    } else {
+        sidebar.style.backgroundColor = '#333';
+    }
+}
+
+// Event listener for scroll event on content area
+content.addEventListener('scroll', changeSidebarColor);
+
+    </script>
+</body>
+</html>
